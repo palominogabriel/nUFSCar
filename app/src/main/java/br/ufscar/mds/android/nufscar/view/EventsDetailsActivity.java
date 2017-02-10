@@ -80,4 +80,20 @@ public class EventsDetailsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onShowMapClicked(View view){
+        Bundle extras = getIntent().getExtras();
+        Eventos event = (Eventos) extras.getSerializable(EventsFragment.KEY_IDEVENTO);
+
+
+        String eventoLocal = event.getLocal().substring(7);
+        Intent intent = new Intent(getBaseContext(), EventMapActivity.class);
+
+        intent.putExtra("local", eventoLocal);
+
+
+        startActivity(intent);
+    }
+
+
+
 }
