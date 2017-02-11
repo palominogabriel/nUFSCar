@@ -72,6 +72,9 @@
             android:background="@drawable/bottom_button"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#FFFFFF"
             />
 
         <Button
@@ -85,6 +88,9 @@
             android:layout_height="match_parent"
             android:onClick="onShowMapClicked"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#FFFFFF"
             />
 
         </LinearLayout>

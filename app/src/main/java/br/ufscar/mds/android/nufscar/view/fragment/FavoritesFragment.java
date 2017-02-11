@@ -30,18 +30,7 @@ public class FavoritesFragment extends Fragment implements AdapterView.OnItemCli
     private View newsFeedView;
     ArrayList mAndroidMapList;
     String fileName = "FavoriteNews.bak";
-//    public static final String URL = "https://ufscar-monitora.firebaseio.com/.json";
-//
-//    public static final String KEY_AUTOR = "autor";
-//    public static final String KEY_DATA = "data";
-//    public static final String KEY_FIGCAPTION = "figcapion";
     public static final String KEY_IDNOTICIA = "idNoticia";
-//    public static final String KEY_IMG = "image_src";
-//    public static final String KEY_TEXTO = "texto";
-//    public static final String KEY_TITULO = "titulo";
-//    public static final String KEY_URL = "url";
-
-
 
     @Nullable
     @Override
@@ -50,18 +39,14 @@ public class FavoritesFragment extends Fragment implements AdapterView.OnItemCli
 
 
         try {
-            //if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-                FileInputStream fileInputStream = getActivity().openFileInput(fileName);
-                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-                mAndroidMapList = (ArrayList) objectInputStream.readObject();
-                objectInputStream.close();
-                fileInputStream.close();
-            //}
+            FileInputStream fileInputStream = getActivity().openFileInput(fileName);
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            mAndroidMapList = (ArrayList) objectInputStream.readObject();
+            objectInputStream.close();
+            fileInputStream.close();
         } catch (FileNotFoundException e) {
-            mAndroidMapList = new ArrayList<News>();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+            mAndroidMapList = new ArrayList<>();
+        } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
         }
 
@@ -69,37 +54,15 @@ public class FavoritesFragment extends Fragment implements AdapterView.OnItemCli
         ListAdapter listAdapter = new ListAdapter(this.mAndroidMapList);
         newsFeedListView.setAdapter(listAdapter);
 
-
-
-        //########################
         onLoaded(mAndroidMapList);
-
-
-
-        //####################
-
-
 
         return this.newsFeedView;
     }
 
-
-    public void onError() {
-        //Toast.makeText(this, "Error !", Toast.LENGTH_SHORT).show();
-    }
-
-
-
     private ListView loadListView() {
 
-        /*ListAdapter adapter = new SimpleAdapter(FavoritesFragment.this, mAndroidMapList, R.layout.list_item,
-                new String[] {  KEY_TITULO, KEY_IMG, KEY_IDNOTICIA },
-                new int[] {R.id.version,R.id.name, R.id.api });*/
-
-        //mListView.setAdapter(adapter);
-
         ListView newsFeedListView = (ListView) this.newsFeedView.findViewById(R.id.list_view_favorites);
-       ListAdapter listAdapter = new ListAdapter(this.mAndroidMapList);
+        ListAdapter listAdapter = new ListAdapter(this.mAndroidMapList);
         newsFeedListView.setAdapter(listAdapter);
 
         return newsFeedListView;
@@ -109,13 +72,7 @@ public class FavoritesFragment extends Fragment implements AdapterView.OnItemCli
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
     }
 
-//    @Override
     public void onLoaded(List<News> androidList) {
-//        for (News android : androidList) {
-//
-//
-//            mAndroidMapList.add(android);
-//        }
 
         ListView listView = loadListView();
 
@@ -125,48 +82,15 @@ public class FavoritesFragment extends Fragment implements AdapterView.OnItemCli
 
                 News news = (News) parent.getItemAtPosition(position);
                 Intent intent = new Intent(view.getContext(), NewsDetailsActivity.class);
-                intent.putExtra(KEY_IDNOTICIA,news);
+                intent.putExtra(KEY_IDNOTICIA, news);
                 startActivity(intent);
-
-
             }
         });
 
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //    public void onLoaded(List<News> androidList) {
