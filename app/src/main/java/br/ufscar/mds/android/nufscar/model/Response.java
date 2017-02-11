@@ -15,6 +15,7 @@ public class Response {
     public List<News> getAndroid() {
         return news;
     }
+
     public List<Eventos> getAndroidEventos() {
         return events;
     }

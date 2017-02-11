@@ -10,6 +10,7 @@ import android.widget.TextView;
 import br.ufscar.mds.android.nufscar.R;
 import br.ufscar.mds.android.nufscar.model.News;
 import br.ufscar.mds.android.nufscar.view.fragment.NewsFeedFragment;
+
 import com.squareup.picasso.Picasso;
 
 import java.io.FileInputStream;
@@ -55,32 +56,10 @@ public class NewsDetailsActivity extends AppCompatActivity {
 
             Button button = (Button) findViewById(R.id.adicionar_favoritos);
 
-//            private void setOnClick(final Button btn, final News news){
-//            btn.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                }
-//            });
-//        }
-
             button.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
-
-//     newsTitle.setText(news.getTitulo()+" TESTE "+news.getAutor()+" TESTE "+news.getData());
-
-
-
-
-
-                    //########################
-//                                              RelativeLayout rl = (RelativeLayout) v.getParent();
-//                                              rl.findViewById()
-
-                    /////////////////////////////////////
                     try {
-                        //if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                         FileInputStream fileInputStream = openFileInput(fileName);
                         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
                         mAndroidMapList = (ArrayList) objectInputStream.readObject();
@@ -88,13 +67,13 @@ public class NewsDetailsActivity extends AppCompatActivity {
                         fileInputStream.close();
 
                         boolean contains = false;
-                        for(int i = 0; i < mAndroidMapList.size(); ++i){
+                        for (int i = 0; i < mAndroidMapList.size(); ++i) {
                             String idCarregado, idNoticia;
 
                             idCarregado = mAndroidMapList.get(i).getIdNoticia();
                             idNoticia = news.getIdNoticia();
 
-                            if(idCarregado.equals(idNoticia))
+                            if (idCarregado.equals(idNoticia))
                                 contains = true;
                         }
 
@@ -109,36 +88,24 @@ public class NewsDetailsActivity extends AppCompatActivity {
                             fileOutputStream.close();
                             objectOutputStream.close();
                         }
-                        // }
                     } catch (FileNotFoundException e) {
                         mAndroidMapList = new ArrayList<News>();
                         mAndroidMapList.add(news);
 
                         FileOutputStream fileOutputStream = null;
-                        //if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-                            try {
-                                fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
-                                ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-                                objectOutputStream.writeObject(mAndroidMapList);
-                                fileOutputStream.close();
-                                objectOutputStream.close();
-                            } catch (IOException e1) {
-                                e1.printStackTrace();
-                            }
-                        //}
+                        try {
+                            fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
+                            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+                            objectOutputStream.writeObject(mAndroidMapList);
+                            fileOutputStream.close();
+                            objectOutputStream.close();
+                        } catch (IOException e1) {
+                            e1.printStackTrace();
+                        }
                     } catch (IOException | ClassNotFoundException e) {
                         e.printStackTrace();
                     }
 
-
-
-
-
-
-
-
-
-                    //##########
                 }
             });
         }

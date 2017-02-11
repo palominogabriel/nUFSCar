@@ -20,7 +20,9 @@ public class Eventos implements Serializable {
     private String url;
 
 
-    public String getIdEventos() { return idEventos; }
+    public String getIdEventos() {
+        return idEventos;
+    }
 
     public String getData() {
         return data;

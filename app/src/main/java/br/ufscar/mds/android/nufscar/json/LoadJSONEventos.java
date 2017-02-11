@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+
 import br.ufscar.mds.android.nufscar.model.Eventos;
 import br.ufscar.mds.android.nufscar.model.Response;
 

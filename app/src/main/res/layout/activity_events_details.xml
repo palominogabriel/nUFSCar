@@ -54,30 +54,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/events_details_text"
+            android:layout_marginTop="20dp">
+
         <Button
             android:id="@+id/events_details_radio"
             android:text="Salvar no calendário"
             android:checked="true"
-            android:layout_below="@id/events_details_text"
             android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:onClick="onAddEventClicked"
+            android:background="@drawable/bottom_button"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
             />
 
         <Button
             android:id="@+id/events_map"
             android:text="Ver local"
             android:checked="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/events_details_text"
+            android:layout_margin="2dp"
+            android:background="@drawable/bottom_button"
             android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:onClick="onShowMapClicked"
+            android:layout_weight="1"
             />
 
-
+        </LinearLayout>
 
     </RelativeLayout>
 </ScrollView>
