@@ -24,7 +24,9 @@
             android:text="Titulo da Noticia"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="30dp" />
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/news_details_author"
@@ -33,9 +35,11 @@
             android:layout_below="@id/news_details_title"
             android:layout_centerHorizontal="true"
             android:text="Autor da Noticia - dd/mm/yy"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textAlignment="center"
             android:textColor="@color/darkgray"
-            android:textSize="15dp" />
+            android:textStyle="italic"
+            />
 
 
         <ImageView
@@ -52,7 +56,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/news_details_image"
-            android:layout_marginTop="20dp" />
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_marginTop="20dp"
+            android:textAlignment="gravity"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"

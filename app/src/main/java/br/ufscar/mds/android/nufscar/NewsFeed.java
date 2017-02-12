@@ -31,6 +31,9 @@ public class NewsFeed extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        getFragmentManager().beginTransaction().replace(R.id.content_frame, new NewsFeedFragment())
+                .commit();
     }
 
     @Override
@@ -46,7 +49,7 @@ public class NewsFeed extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.news_feed, menu);
+        //getMenuInflater().inflate(R.menu.news_feed, menu);
         return true;
     }
 

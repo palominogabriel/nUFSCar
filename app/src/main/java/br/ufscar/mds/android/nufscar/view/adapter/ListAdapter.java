@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by vdour on 26/01/2017.
+ * Created by Gabriel Palomino on 26/01/2017.
  */
 
 public class ListAdapter extends BaseAdapter {
@@ -21,7 +21,10 @@ public class ListAdapter extends BaseAdapter {
     private List<News> mAndroidMapList = new ArrayList<>();
 
     public ListAdapter(List<News> mAndroidMapList) {
-        this.mAndroidMapList = mAndroidMapList;
+        // Sort the list to From the most recent News
+        for(int i = mAndroidMapList.size()-1; i >= 0 ; --i){
+            this.mAndroidMapList.add(mAndroidMapList.get(i));
+        }
     }
 
     @Override
