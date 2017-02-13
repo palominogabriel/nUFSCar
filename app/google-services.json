@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "898209563604",
+    "firebase_url": "https://nufscar-17d6e.firebaseio.com",
+    "project_id": "nufscar-17d6e",
+    "storage_bucket": "nufscar-17d6e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898209563604:android:198441b1353524c3",
+        "android_client_info": {
+          "package_name": "br.ufscar.mds.android.nufscar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898209563604-dph1fd4qaa6s7a87vjg40ti6ksbg8fq2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9hDtJzDZ5rpF26c9sJdUID0ydhloTXoo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
