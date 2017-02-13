@@ -88,8 +88,6 @@ public class NewsFeed extends AppCompatActivity
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame, new FavoritesFragment())
                     .commit();
-        } else if (id == R.id.nav_about) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
